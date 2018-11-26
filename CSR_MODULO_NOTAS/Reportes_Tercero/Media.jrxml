@@ -1,0 +1,1463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6ba8683f-a872-405c-bed3-f0e062191cec">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="33"/>
+	<property name="ireport.y" value="106"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="Ano" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Grado" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Periodo" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT 
+Nombre3,Ano3,Grado3,Periodo3,Cod_Estudiante3,Apellido_materno3,Apellido_paterno3,
+Nota_Arti3,Nota_Catpaz3,Nota_Cpolit3,Nota_Edu_Fisi3,Nota_Estad3,Nota_Etica3,
+Nota_Fisica3,Nota_Hum3,Nota_Infor3,Nota_Ingles3,Nota_Mate3,Nota_Natu3,Nota_Filo3,Nota_Quim3,Nota_Reli3,
+Nota_Soci3,Desemp_Arti3,Desemp_Catpaz3,Desemp_Cpolit3,Desemp_Edu_Fisi3,Desemp_Estad3,
+Desemp_Etica3,Desemp_Filo3,Desemp_Fisica3,Desemp_Hum3,Desemp_Infor3,Desemp_Infor3,Desemp_ingles3,
+Desemp_Mate3,Desemp_Natu3,Desemp_Quim3,Desemp_Reli3,Desemp_Soci3,Acum_Arti3,Acum_Catpaz3,Acum_Cpolit3,
+Acum_Edu_Fisi3,Acum_Estad3,Acum_Etica3,Acum_Filo3,Acum_Fisica3,Acum_Hum3,Acum_Infor3,Acum_Ingles3,
+Acum_Mate3,Acum_Natu3,Acum_Quim3,Acum_Reli3,Acum_Soci3,Inasi_Arti3,Inasi_CatPaz3,Inasi_Cpolit2,Inasi_Edu_Fisi2,
+Inasi_Estad2,Inasi_Etica2,Inasi_Filo2,Inasi_Fisica2,Inasi_Hum2,Inasi_Infor2,Inasi_Ingles2,Inasi_Mate3,
+Inasi_Natu3,Inasi_Quim3,Inasi_Reli3,Inasi_Soci3,Nota_Estad3,Acum_Estad3,Desemp_Estad3, Inasi_Estad2,
+Inasi_Cpolit3, Nota_Cpolit3,Desemp_Cpolit3,Acum_Cpolit3,Nota_Fisica3,Acum_Fisica3, Desemp_Fisica3,Inasi_Fisica3, Acum_Hum3,
+
+round(avg((Nota_Natu3+Nota_Soci3+Nota_Arti3+Nota_Edu_Fisi3+Nota_Reli3+Nota_Etica3+Nota_Hum3+Nota_Ingles3+Nota_Mate3+Nota_Infor3+Nota_Filo3+Nota_Catpaz3+Nota_Estad3+Nota_Fisica3+Nota_Quim3)/15),2) as acumulado,
+
+round(sum(t1.Acum_Hum+t2.Acum_Hum2+t3.Acum_Hum3),2) AS HUM,
+round(sum(t1.Acum_Natu+t2.Acum_Natu2+t3.Acum_Natu3),2) as natu,
+round(sum(t1.Acum_Soci+t2.Acum_Soci2+t3.Acum_Soci3),2)as soci,
+round(sum(t1.Acum_Arti+t2.Acum_Arti2+t3.Acum_Arti3),2)as arti,
+round(sum(t1.Acum_Edu_Fisi+t2.Acum_Edu_Fisi2+t3.Acum_Edu_Fisi3),2)as edu_fisi,
+round(sum(t1.Acum_Reli+t2.Acum_Reli2+t3.Acum_Reli3),2)as reli,
+round(sum(t1.Acum_Etica+t2.Acum_Etica2+t3.Acum_Etica3),2)as etica,
+round(sum(t1.Acum_Ingles+t2.Acum_Ingles2+t3.Acum_Ingles3),2)as ingles,
+round(sum(t1.Acum_Mate+t2.Acum_Mate2+t3.Acum_Mate3),2)as mate,
+round(sum(t1.Acum_Infor+t2.Acum_Infor2+t3.Acum_Infor3),2)as infor,
+round(sum(t1.Acum_Filo+t2.Acum_Filo2+t3.Acum_Filo3),2)as filo,
+round(sum(t1.Acum_Catpaz+t2.Acum_Catpaz2+t3.Acum_Catpaz3),2)as catpaz,
+round(sum(t1.Acum_Estad+t2.Acum_Estad2+t3.Acum_Estad3 ),2)as estad,
+round(sum(t1.Acum_Fisica+t2.Acum_Fisica2+t3.Acum_Fisica3),2)as fisica,
+round(sum(t1.Acum_Quim+t2.Acum_Quim2+t3.Acum_Quim3),2)as Quim,
+round(sum(t1.Acum_Cpolit+t2.Acum_Cpolit2+t3.Acum_Cpolit3),2)as Cpolit
+
+from CSR_BD.Periodo_Dos  t2 inner join  CSR_BD.Periodo_Uno t1 left join  CSR_BD.Periodo_Tres t3
+  on t2.Cod_Estudiantes=t1.Cod_Estudiante and  t2.Cod_Estudiantes=t3.Cod_Estudiante3  
+where t3.Grado3=$P{Grado}  and t3.Ano3= $P{Ano} and t3.Periodo3= $P{Periodo}
+group by Cod_Estudiante3
+order by acumulado desc]]>
+	</queryString>
+	<field name="Nombre3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Ano3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Grado3" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Periodo3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Cod_Estudiante3" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Apellido_materno3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Apellido_paterno3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nota_Arti3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nota_Catpaz3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nota_Cpolit3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nota_Edu_Fisi3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nota_Estad3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nota_Etica3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nota_Fisica3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nota_Hum3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nota_Infor3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nota_Ingles3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nota_Mate3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nota_Natu3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nota_Filo3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nota_Quim3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nota_Reli3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nota_Soci3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Desemp_Arti3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Desemp_Catpaz3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Desemp_Cpolit3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Desemp_Edu_Fisi3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Desemp_Estad3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Desemp_Etica3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Desemp_Filo3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Desemp_Fisica3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Desemp_Hum3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Desemp_Infor3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Desemp_ingles3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Desemp_Mate3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Desemp_Natu3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Desemp_Quim3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Desemp_Reli3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Desemp_Soci3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Arti3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Catpaz3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Cpolit3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Edu_Fisi3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Estad3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Etica3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Filo3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Fisica3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Hum3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Infor3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Ingles3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Mate3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Natu3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Quim3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Reli3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Soci3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_Arti3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_CatPaz3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_Cpolit2" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_Edu_Fisi2" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_Estad2" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_Etica2" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_Filo2" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_Fisica2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_Hum2" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_Infor2" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_Ingles2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_Mate3" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_Natu3" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_Quim3" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_Reli3" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_Soci3" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_Cpolit3" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_Fisica3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="acumulado" class="java.lang.Double"/>
+	<field name="HUM" class="java.lang.Double"/>
+	<field name="natu" class="java.lang.Double"/>
+	<field name="soci" class="java.lang.Double"/>
+	<field name="arti" class="java.lang.Double"/>
+	<field name="edu_fisi" class="java.lang.Double"/>
+	<field name="reli" class="java.lang.Double"/>
+	<field name="etica" class="java.lang.Double"/>
+	<field name="ingles" class="java.lang.Double"/>
+	<field name="mate" class="java.lang.Double"/>
+	<field name="infor" class="java.lang.Double"/>
+	<field name="filo" class="java.lang.Double"/>
+	<field name="catpaz" class="java.lang.Double"/>
+	<field name="estad" class="java.lang.Double"/>
+	<field name="fisica" class="java.lang.Double"/>
+	<field name="Quim" class="java.lang.Double"/>
+	<field name="Cpolit" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="272" splitType="Stretch">
+			<frame>
+				<reportElement style="SubTitle" mode="Opaque" x="2" y="244" width="548" height="24" forecolor="#FFFFFF" backcolor="#C0C0C0" uuid="592c5b26-3553-42c9-acad-b78d19fa50f0"/>
+				<staticText>
+					<reportElement style="Column header" x="301" y="6" width="54" height="18" forecolor="#000000" uuid="4d0094fa-5669-4937-9cc3-d9c53143bec9"/>
+					<textElement>
+						<font fontName="DejaVu Sans" size="18" isBold="false"/>
+					</textElement>
+					<text><![CDATA[GRADO:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="157" y="2" width="275" height="18" forecolor="#FFFFFF" uuid="040d6840-09c7-4808-a18a-f7792475d8c7"/>
+					<textElement>
+						<font fontName="Liberation Serif" size="12" isBold="true" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[INFORME ACADÉMICO TERCER PERÍODO]]></text>
+				</staticText>
+			</frame>
+			<staticText>
+				<reportElement style="Column header" x="-292" y="10" width="175" height="18" forecolor="#000000" uuid="3ebe7572-ffde-4ff7-b399-7a7c1a3497ca"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[CIENCIAS NATURALES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="-292" y="10" width="175" height="18" forecolor="#000000" uuid="88f8abd1-8ccf-4e0b-99dc-1090aee324d7"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[CIENCIAS NATURALES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="13" y="227" width="40" height="18" forecolor="#000000" uuid="0b73d00a-6d56-4207-8b27-2b045acd7483"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Grado:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="53" y="226" width="68" height="17" uuid="2e3ac0cd-7c63-4f0b-9646-2ccbd407b384"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Grado3}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="10" y="180" width="153" height="18" forecolor="#000000" uuid="a8767918-14a4-40bc-972b-46869ea0e890"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[APELLIDOS Y NOMBRES:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="163" y="179" width="102" height="18" uuid="c4709629-7d88-492f-b888-24809254ed9a"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Apellido_paterno3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="-136" y="-29" width="100" height="18" uuid="a436e52f-d86f-493a-9c5e-cebec317d112"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Apellido_paterno3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="-136" y="-29" width="100" height="18" uuid="d520431e-9b0d-4aef-a74d-d25be468c45e"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Apellido_paterno3}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="-289" y="-1" width="40" height="18" forecolor="#000000" uuid="49b82780-73c4-44fe-b55f-d35d8f0d3d69"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Grado:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="-249" y="-1" width="100" height="17" uuid="f2f577c6-6d20-4075-be06-d90b29edec6c"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Cod_Estudiante3}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="-289" y="-1" width="40" height="18" forecolor="#000000" uuid="ad4390bb-3c98-4b9b-9f19-e2a0ebd55438"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Grado:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="-249" y="-1" width="100" height="17" uuid="33902fb2-aed1-4019-b678-eb7761cf5828"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Cod_Estudiante3}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="-289" y="-1" width="40" height="18" forecolor="#000000" uuid="8e8742f7-c845-48c1-861d-798737d0b5eb"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Grado:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="-249" y="-1" width="100" height="17" uuid="fcaa2933-e77b-46cf-bbbc-e6ff17c3469b"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Cod_Estudiante3}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="-289" y="-1" width="40" height="18" forecolor="#000000" uuid="969f81da-2ba4-40b1-8d8e-c7c4cc137cff"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Grado:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="-249" y="-1" width="100" height="17" uuid="396bacd1-5c95-4126-b4e3-49ef7695081e"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Cod_Estudiante3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="-136" y="-29" width="100" height="18" uuid="1b0cba5a-7077-4844-8720-414da69bef68"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Apellido_paterno3}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="-289" y="-29" width="153" height="18" forecolor="#000000" uuid="8250ca00-4427-4ddc-8a7c-328debed4080"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[APELLIDOS Y NOMBRES:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="-136" y="-29" width="100" height="18" uuid="1dc2aa40-c6b4-405a-855c-9a6daf75a8ef"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Apellido_paterno3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="270" y="180" width="97" height="17" uuid="6a3ea21a-1d53-47b5-ae39-aa36a85e3424"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Apellido_materno3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="373" y="180" width="178" height="17" uuid="27008450-c889-4197-93ec-a39d76b5f5f3"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nombre3}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="-289" y="-1" width="40" height="18" forecolor="#000000" uuid="2a212059-f108-43ba-a9dd-3bab48a0fa0d"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Grado:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="-249" y="-1" width="100" height="17" uuid="487dfef5-27ea-4133-9de1-3116fd6ce71a"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Cod_Estudiante3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="53" y="209" width="68" height="17" uuid="585dff3b-ad8e-4d5c-95e0-f7eddcbb7c7c"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Cod_Estudiante3}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="-289" y="-1" width="40" height="18" forecolor="#000000" uuid="8702f631-9c41-4fcc-b2f6-fd1ad3914233"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Grado:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="-292" y="10" width="175" height="18" forecolor="#000000" uuid="fb113e2e-a213-4ca4-814c-23d49bbcc690"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[CIENCIAS NATURALES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="12" y="209" width="41" height="18" forecolor="#000000" uuid="d9a6b9c5-afbe-4449-9ee9-716662b627aa"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Código:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="-246" y="0" width="68" height="17" uuid="5817b40e-2542-4b5c-9cc8-6465c745be5c"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Cod_Estudiante3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="191" y="224" width="68" height="17" uuid="603966ce-b7da-4b35-876d-d5f66a365f86"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Ano3}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="-286" y="17" width="40" height="18" forecolor="#000000" uuid="fb494f94-7d62-4188-8d93-0e8c33d27a8b"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Grado:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="166" y="224" width="75" height="18" forecolor="#000000" uuid="9221c6b6-994d-4fc2-80aa-9f401f550298"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Año:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="-141" y="-2" width="75" height="18" forecolor="#000000" uuid="0dc8dfc2-29ba-46f8-bb12-b618b695eecd"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Año:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="-116" y="-2" width="68" height="17" uuid="98ffb6e7-143e-411b-bd86-7288396f196a"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Ano3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Column header" x="299" y="207" width="75" height="20" forecolor="#000000" uuid="ed83d5e7-7060-406d-8193-27a8e768a6b2"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Puesto: "+$V{PAGE_NUMBER}+" De"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="373" y="208" width="38" height="18" forecolor="#000000" uuid="1b3ad827-df25-440a-81b8-5044ecebf9e8"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="227" y="208" width="68" height="17" uuid="f033dd76-ebdd-483f-94f8-9b55e1eb7007"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{acumulado}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="165" y="208" width="62" height="16" forecolor="#000000" uuid="5218a547-1350-47ea-b1ab-a657b4018659"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Promedio:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="28" y="114" width="357" height="29" uuid="cbc42bb8-d911-4931-8cfc-cb66d05df40b"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Serif" size="24" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Colegio San Rafael]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="164" y="159" width="138" height="18" uuid="2a00426a-4e56-4b66-8770-a3cb9c575eea"/>
+				<textElement textAlignment="Right">
+					<font fontName="Liberation Serif" size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[DANE 313244000710]]></text>
+			</staticText>
+			<image hyperlinkType="LocalPage" hyperlinkTarget="Blank">
+				<reportElement x="388" y="114" width="64" height="55" uuid="f2bbe0b5-fa27-4223-97cd-72d14d939239"/>
+				<imageExpression><![CDATA["escudo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="SubTitle" x="303" y="159" width="77" height="18" uuid="c9c1ad2c-221d-4517-8f25-428aedac78c5"/>
+				<textElement textAlignment="Right">
+					<font fontName="Liberation Serif" size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[ICFES 180893]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="93" y="140" width="288" height="19" uuid="2dd183a5-7fe8-4525-bd11-1169c9da2b8a"/>
+				<textElement textAlignment="Right">
+					<font fontName="Liberation Serif" size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Aprobación Oficial Res 00178 Nov-05-1999]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="363" y="227" width="68" height="17" uuid="2e86d111-915e-4815-b71c-d24a931067b0"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Periodo3}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="301" y="227" width="62" height="16" forecolor="#000000" uuid="d1697665-3e62-4209-b296-10610bf7465f"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Período:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="445" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="2" y="28" width="94" height="24" uuid="0a521114-e052-4ed4-bc45-22e962783035"/>
+			</frame>
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="2" y="0" width="555" height="39" uuid="a3396317-10bb-4779-8e3c-b5c40c0e5d3b"/>
+				<frame>
+					<reportElement style="SubTitle" mode="Opaque" x="6" y="11" width="548" height="24" forecolor="#FFFFFF" backcolor="#C0C0C0" uuid="8add3369-158f-49cf-840f-2ea28a10f2f5"/>
+					<staticText>
+						<reportElement style="Column header" x="301" y="6" width="54" height="18" forecolor="#000000" uuid="beebe8c1-2e49-4267-a8aa-997929f6984a"/>
+						<textElement>
+							<font fontName="DejaVu Sans" size="18" isBold="false"/>
+						</textElement>
+						<text><![CDATA[GRADO:]]></text>
+					</staticText>
+					<staticText>
+						<reportElement style="Column header" x="329" y="1" width="91" height="18" forecolor="#000000" uuid="31e485f6-114e-4c56-8687-3e6565ee1e45"/>
+						<textElement>
+							<font fontName="Liberation Serif" size="12" isBold="true"/>
+						</textElement>
+						<text><![CDATA[DESEMPEÑO]]></text>
+					</staticText>
+				</frame>
+			</frame>
+			<staticText>
+				<reportElement style="Column header" x="8" y="12" width="331" height="18" forecolor="#000000" uuid="6c81f9b5-cd29-47e3-a3eb-fbd825ac2346"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ASIGNATURA                                  NOTA    PORCENTAJE(30%)   ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="7" y="39" width="175" height="18" forecolor="#000000" uuid="22c30ba3-a0cb-4403-90c4-69692637df74"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[CIENCIAS NATURALES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="7" y="58" width="175" height="18" forecolor="#000000" uuid="c11f8dce-4086-4ac8-89be-55bd5366e131"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[CIENCIAS SOCIALES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="7" y="95" width="175" height="18" forecolor="#000000" uuid="3060b986-6894-4202-b82c-a33d59468f0a"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[EDUCACIÓN FÍŚICA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="6" y="76" width="175" height="18" forecolor="#000000" uuid="cb26abb1-39dd-49e6-a5b4-0c614bc26c02"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[EDUCACIÓN ARTÍSTICA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="8" y="132" width="175" height="18" forecolor="#000000" uuid="bdac9a73-ad69-4867-bbe9-963824e60f1e"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[ÉTICA Y VALORES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="8" y="114" width="175" height="18" forecolor="#000000" uuid="326cd47b-d598-46c5-b5ce-1fd20fe6332c"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[EDUCACIÓN  RELIGIOSA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="8" y="170" width="175" height="18" forecolor="#000000" uuid="ee7eb404-5539-44f0-90e0-a6793b5193f9"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[INGLES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="8" y="151" width="191" height="18" forecolor="#000000" uuid="a66855a3-0481-4d77-8dfc-1f48bf512fa2"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[HUMANIDADES-CASTELLANO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="6" y="206" width="192" height="18" forecolor="#000000" uuid="15a9d01c-16f3-4db3-94e4-8ef1ec859ba0"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[TECNOLOGÍA E INFORMÁTICA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="8" y="189" width="175" height="18" forecolor="#000000" uuid="ae3f2793-66f9-4762-a76e-e2c4e226ad00"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[MATEMÁTICAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="7" y="244" width="175" height="18" forecolor="#000000" uuid="d387a956-0c27-43f8-a51d-860f76dd26e2"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[CÁTEDRA DE LA PAZ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="8" y="225" width="175" height="18" forecolor="#000000" uuid="0fdeb5ab-6cd1-42ba-bc08-9e0c5c26ee78"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[FILOSOFÍA]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="205" y="39" width="53" height="17" uuid="9d29b2ac-a757-4f50-9c14-b6e2f35887e1"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nota_Natu3}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="57" width="553" height="1" uuid="80c95cde-31c5-41bc-8a56-08b1fd1407af"/>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="425" y="11" width="61" height="18" forecolor="#000000" uuid="02cceaa4-5b46-4ae6-8d57-ae59a9a0b80b"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INAS.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="76" width="553" height="1" uuid="ea9cf1a4-8191-4193-963a-9203cc792b22"/>
+			</line>
+			<line>
+				<reportElement x="0" y="95" width="553" height="1" uuid="66d38ebe-c3ab-4167-add5-acd47a59644b"/>
+			</line>
+			<line>
+				<reportElement x="0" y="112" width="553" height="1" uuid="2199fc14-0f8b-4fc8-9bf9-cacfa3798b5e"/>
+			</line>
+			<line>
+				<reportElement x="0" y="131" width="553" height="1" uuid="09458779-9f66-4cfd-a3b0-2ef69ad03e31"/>
+			</line>
+			<line>
+				<reportElement x="0" y="150" width="553" height="1" uuid="7c9b4996-8d90-43e8-93d4-7159b4bafb11"/>
+			</line>
+			<line>
+				<reportElement x="0" y="169" width="553" height="1" uuid="5d0eb35a-a1a7-4332-8f16-bb3945f5bb90"/>
+			</line>
+			<line>
+				<reportElement x="0" y="188" width="553" height="1" uuid="70b209a3-6458-4bd1-a2e9-47dc994a2da6"/>
+			</line>
+			<line>
+				<reportElement x="0" y="206" width="553" height="1" uuid="8a832c0e-0a92-4537-b78d-f5137c7971eb"/>
+			</line>
+			<line>
+				<reportElement x="0" y="224" width="553" height="1" uuid="3a132e34-5924-45ae-b9be-f56c068036a1"/>
+			</line>
+			<line>
+				<reportElement x="2" y="243" width="553" height="1" uuid="86522157-b8d8-4744-b842-3361af1bacf2"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="205" y="60" width="53" height="17" uuid="c28ebc1e-f61d-40c4-a210-1463bbfba2e0"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nota_Soci3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="205" y="79" width="53" height="17" uuid="9694081c-bc3d-45fe-a7a8-d55c902bcf90"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nota_Arti3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="205" y="97" width="53" height="17" uuid="bad732fc-084e-4652-8a34-900f1e80f7ba"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nota_Edu_Fisi3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="205" y="115" width="53" height="17" uuid="d52cda30-5011-4a55-8cdc-19830803fe48"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nota_Reli3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="205" y="131" width="53" height="17" uuid="eabf97bc-54af-4304-b03a-c48df93acdd2"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nota_Etica3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="205" y="150" width="53" height="17" uuid="85d431b0-21f6-45f2-8047-7ec1d970d851"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nota_Hum3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="205" y="169" width="53" height="17" uuid="89c038e5-461c-4dab-a3b2-89d8e7298826"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nota_Ingles3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="205" y="190" width="53" height="17" uuid="87696c31-9522-452a-b2d1-19e301fdcb6b"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nota_Mate3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="205" y="206" width="53" height="17" uuid="0a8661b1-0d1b-4708-9971-639fa0394f67"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nota_Infor3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="205" y="227" width="53" height="17" uuid="936d8d23-4ea3-43f5-92e4-f32a3d853e4c"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nota_Filo3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="205" y="243" width="53" height="17" uuid="6519fb8c-f1c3-4634-a359-a29d5662eeac"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nota_Catpaz3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="266" y="206" width="73" height="17" uuid="f1e75cf7-2571-47e5-abac-801a13ab6226"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Infor3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="266" y="115" width="73" height="17" uuid="1ca1ae32-8f4e-4d32-a479-6be96ec39b1a"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Reli3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="266" y="227" width="73" height="17" uuid="63efc87d-f53d-4db3-a9b3-e23d030315c4"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Filo3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="266" y="131" width="73" height="17" uuid="0647428e-eeeb-48a5-ab4d-b5bd685953ae"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Etica3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="266" y="169" width="73" height="17" uuid="20f0cf1d-c310-491b-9581-4213faf5e127"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Ingles3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="266" y="79" width="73" height="17" uuid="c4703ccd-0655-4c6e-9630-4cf68c6f4cc0"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Arti3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="266" y="150" width="73" height="17" uuid="79a9e35c-1cfa-4b44-9174-3a74803cc1b3"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Hum3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="266" y="39" width="73" height="17" uuid="01dffb3f-f919-4bad-83c8-fa64c503cb5a"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Natu3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="266" y="97" width="73" height="17" uuid="b563ddb9-14a1-4b47-b86a-cd30d87a6126"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Edu_Fisi3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="266" y="60" width="73" height="17" uuid="731b8b36-3630-424f-bf9c-5d3734fb4439"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Soci3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="266" y="190" width="73" height="17" uuid="9e663d7a-e999-4ce1-a0e1-2e0129a64969"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Mate3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="266" y="243" width="73" height="17" uuid="d7105646-e850-4148-8cb9-06a0f0cc6a07"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Catpaz3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="339" y="243" width="75" height="17" uuid="946a14ec-0657-4f53-b651-abf161ed48ae"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Desemp_Catpaz3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="339" y="190" width="75" height="17" uuid="167684c4-f275-4e39-b80b-49d027710b40"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Desemp_Mate3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="339" y="60" width="75" height="17" uuid="3e74cd2f-9461-4a27-9c9d-7ae998d6eaf1"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Desemp_Soci3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="339" y="131" width="75" height="17" uuid="5e691346-b962-4e2b-958d-93c1bfc3b92b"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Desemp_Etica3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="339" y="169" width="75" height="17" uuid="d1ad91c8-bb19-4b4c-9b40-c936b1e79ea1"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Desemp_ingles3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="339" y="150" width="75" height="17" uuid="e885d185-c74a-4c18-a5f5-f037afefba35"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Desemp_Hum3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="339" y="227" width="75" height="17" uuid="0141dce5-1ce2-4f06-ac93-a08f185b6d0d"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Desemp_Filo3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="339" y="79" width="75" height="17" uuid="7caa288d-adac-4cec-9400-6a44bbb401a1"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Desemp_Arti3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="339" y="39" width="75" height="17" uuid="c0f30b32-9abe-4539-88a9-30141cbc413f"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Desemp_Natu3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="339" y="115" width="75" height="17" uuid="2b7c0068-e16c-49ba-bc29-a415a0c2e3d5"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Desemp_Reli3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="339" y="206" width="75" height="17" uuid="f90f48a9-39d1-459d-b40a-f8976a85b3a8"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Desemp_Infor3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="339" y="97" width="75" height="17" uuid="bf3cdcdd-b20b-44c6-ba31-150bc8d1892f"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Desemp_Edu_Fisi3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="430" y="243" width="35" height="17" uuid="370141e1-df5e-4fb1-a814-5d0e60211bfc"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Inasi_CatPaz3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="430" y="190" width="35" height="17" uuid="7472cc14-aa36-4c38-bac8-3c09a8c59b7d"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Inasi_Mate3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="430" y="60" width="35" height="17" uuid="a208c7f0-bded-4336-a59f-dc32b8503f98"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Inasi_Soci3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="430" y="131" width="35" height="17" uuid="a4a6021c-46ad-45b1-938c-e2ba2aa4354d"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Inasi_Etica2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="430" y="169" width="35" height="17" uuid="f9261479-4864-49cb-9fc9-14c0904694ca"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Inasi_Ingles2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="430" y="150" width="35" height="17" uuid="f5e1b391-fd16-4c4d-82b6-6975bcf25374"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Inasi_Hum2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="430" y="227" width="35" height="17" uuid="5682a223-1518-4300-881d-21f7d31a6c5c"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Inasi_Filo2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="430" y="79" width="35" height="17" uuid="227cd2a9-843e-440f-a993-8d4566ed7a46"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Inasi_Arti3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="430" y="39" width="35" height="17" uuid="cabfd207-d034-47f4-a7a0-701b079278c6"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Inasi_Natu3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="430" y="115" width="35" height="17" uuid="aa0c76d6-da08-4277-9e20-fb0b4ca5487c"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Inasi_Reli3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="430" y="206" width="35" height="17" uuid="f05a7c20-bfd5-44cd-a969-1915c010a47b"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Inasi_Infor2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="430" y="97" width="35" height="17" uuid="fca8e3e0-7790-4671-b427-b3014d122613"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Inasi_Edu_Fisi2}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="96" y="391" width="455" height="1" uuid="fc119766-ab2f-42d3-8ac0-6f9a540ad63c"/>
+			</line>
+			<line>
+				<reportElement x="96" y="375" width="455" height="1" uuid="f9042896-b86b-4e12-b983-8aa5aef2333c"/>
+			</line>
+			<line>
+				<reportElement x="94" y="410" width="455" height="1" uuid="ddc16409-a682-4c34-aa34-f453b170bd8b"/>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="-292" y="215" width="175" height="18" forecolor="#000000" uuid="6e0cbe9c-ddfb-4f28-b23a-0ce8375a91a5"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[CÁTEDRA DE LA PAZ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="12" y="358" width="109" height="18" forecolor="#000000" uuid="3fc2cdda-83ae-4d30-b79e-eb48a02d8684"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[OBSERVACIONES:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="-287" y="252" width="109" height="18" forecolor="#000000" uuid="9dd194b0-8944-41ae-be1c-b9e53ffeb238"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[OBSERVACIONES:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="-292" y="215" width="175" height="18" forecolor="#000000" uuid="279e3307-e89e-4e37-a5f9-dc5ef1a69fd2"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[CÁTEDRA DE LA PAZ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="-291" y="196" width="175" height="18" forecolor="#000000" uuid="0066b13a-db26-45f1-94b6-d39fea4a43dc"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[FILOSOFÍA]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="-71" y="198" width="53" height="17" uuid="02f7b398-15a2-4eed-ba3d-457de78d68e5"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nota_Filo3}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="4" y="262" width="553" height="1" uuid="cb3f52c7-6098-494b-b20d-9cd6e28273a1"/>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="-292" y="215" width="175" height="18" forecolor="#000000" uuid="24dde0e2-b7da-4fd4-ba43-99d715480e09"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[CÁTEDRA DE LA PAZ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="465" y="10" width="84" height="18" forecolor="#000000" uuid="8f3b7ccb-8821-4062-862d-4e58496323a6"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ACUMULADO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="486" y="23" width="61" height="18" forecolor="#000000" uuid="ff344385-0524-41aa-8660-bb77bca4d8c0"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[(75%)]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="488" y="41" width="67" height="17" uuid="0598f007-f6f4-48a5-8818-7091d6db3a18"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{natu}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="488" y="62" width="67" height="17" uuid="740c0b4b-6cfe-4bec-8080-88feb2f53160"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{soci}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="488" y="99" width="67" height="17" uuid="e36e74d2-5b9a-4dad-9ca5-1fab3e7273fa"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{edu_fisi}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="488" y="245" width="67" height="17" uuid="4381066d-0a98-4e65-beb2-3f5f14321379"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{catpaz}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="488" y="133" width="67" height="17" uuid="d967b486-aac9-4c66-9bc3-a8c0e814c656"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{etica}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="488" y="226" width="67" height="17" uuid="662bfa80-f35a-4be1-93cc-91e4dd27678a"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{filo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="488" y="152" width="67" height="17" uuid="379b370a-7125-4d1d-8dc6-2ab31affbbd8"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{HUM}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="488" y="171" width="67" height="17" uuid="5161f7c5-9fba-4044-a33e-aa9dde069848"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ingles}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="488" y="192" width="67" height="17" uuid="cc6e1319-26f1-434e-9814-923aeffa7be8"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mate}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="488" y="81" width="67" height="17" uuid="a2d3fff8-3278-48fe-9155-100a4f61c961"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{arti}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="488" y="208" width="67" height="17" uuid="35b5d352-ccaf-4c60-a0c2-f5a35739be48"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{infor}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="488" y="117" width="67" height="17" uuid="7d950814-f91c-4cfe-af31-ed10f482095a"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{reli}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="265" y="22" width="61" height="18" forecolor="#000000" uuid="fcbe4797-a517-42ac-b480-54cfe3122a1d"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[(25%)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="2" y="283" width="553" height="1" uuid="3cd5b405-a5d6-4fcf-919e-8bda238c2df6"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="206" y="285" width="51" height="17" uuid="0e3d94f8-cf07-41ea-b67d-7f1b2a602db2"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nota_Fisica3}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="3" y="303" width="553" height="1" uuid="ef9343b1-8d18-4576-9ad6-317c4ff5c925"/>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="6" y="285" width="91" height="18" forecolor="#000000" uuid="4435a5f0-7f01-49d3-99c6-5b7ccf9de6a9"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FÍSICA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="8" y="266" width="91" height="18" forecolor="#000000" uuid="9a9f75fb-67bb-4606-a2e7-023cb8748d94"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ESTADÍSTICA]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="343" y="285" width="75" height="17" uuid="e178c118-d500-41de-9a5f-dbe7475bbb20"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Desemp_Fisica3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="490" y="265" width="67" height="17" uuid="678e6fdf-aaf6-4c54-958e-8b89d104776c"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estad}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="206" y="265" width="51" height="17" uuid="f7c2d9dc-b0c5-4b64-9766-b76f4676de62"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nota_Estad3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="490" y="281" width="67" height="17" uuid="7aafc54c-33de-4312-a410-bac76af2325b"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fisica}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="430" y="282" width="36" height="17" uuid="60226497-0403-4bb6-86a4-594ca4671edf"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Inasi_Fisica2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="343" y="265" width="75" height="17" uuid="088337e2-7df2-4ef9-be1a-5e9784c84159"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Desemp_Estad3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="430" y="265" width="36" height="17" uuid="88f6f29a-a75c-4a1e-9fa8-fd000d948848"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Inasi_Estad2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="267" y="265" width="73" height="17" uuid="f17d7583-e35e-4f79-a4c9-963b509d8987"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Estad3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="267" y="285" width="73" height="17" uuid="490b9b3a-ed36-4386-9b4d-4b1fa158597e"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Fisica3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="267" y="305" width="73" height="17" uuid="74a0b6d3-e052-438e-8cb9-d8a566d879c6"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Quim3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="430" y="302" width="36" height="17" uuid="d1fc635e-dd5c-4aba-a896-b8e472037866"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Inasi_Quim3}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="6" y="305" width="91" height="18" forecolor="#000000" uuid="02e05043-693d-4655-8006-d5e8b63c3edf"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[QUÍMICA]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="343" y="305" width="75" height="17" uuid="6cba683c-ef2e-4820-8edf-db6b52b89da2"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Desemp_Quim3}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="3" y="323" width="553" height="1" uuid="dfba248e-f576-4d4c-a6af-d74f16e8b356"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="490" y="302" width="67" height="17" uuid="a4d75ea4-dd04-4805-acfa-b5cedac2c5f0"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Quim}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="206" y="305" width="51" height="17" uuid="117253f1-5726-42ed-9da5-4c3b58bbac62"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Inasi_Quim3}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement style="Column header" x="163" y="22" width="91" height="18" forecolor="#000000" uuid="905c5084-dd3d-4ebc-9db4-c1484833a94a"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RECTOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="382" y="20" width="143" height="18" forecolor="#000000" uuid="4688647c-168c-475e-bb2b-92ccff72d7eb"/>
+				<textElement>
+					<font fontName="Liberation Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DIRECTOR DE GRUPO]]></text>
+			</staticText>
+			<line>
+				<reportElement x="96" y="22" width="216" height="1" uuid="8d5f6327-2539-4435-a5bc-5319da2c4255"/>
+			</line>
+			<line>
+				<reportElement x="330" y="20" width="216" height="1" uuid="fec3c68d-780d-4133-bd50-061a747125ed"/>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="25" forecolor="#4269C8" backcolor="#000000" uuid="68d10f27-aae2-402e-a915-5e3bec45691b"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="3" width="197" height="20" forecolor="#FFFFFF" uuid="dab2dd5a-6b1b-48cc-8776-c57a4d3702fe"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="DejaVu Sans" size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

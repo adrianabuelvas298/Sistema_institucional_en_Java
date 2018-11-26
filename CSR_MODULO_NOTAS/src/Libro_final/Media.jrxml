@@ -1,0 +1,1767 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="019874d0-46e0-4b4f-9a5b-c32f20a8c40c">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="485"/>
+	<property name="ireport.y" value="633"/>
+	<parameter name="Grado" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Ano" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT *
+from CSR_BD.Periodo_Cuatro
+
+where Grado4=$P{Grado}  and Ano4= $P{Ano}
+group by   Cod_Estudiante4
+order by Apellido_paterno4 ]]>
+	</queryString>
+	<field name="Nombre4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Ano4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Grado4" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Periodo4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Cod_Estudiante4" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Apellido_materno4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Apellido_paterno4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nota_Arti4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nota_Catpaz4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nota_Cpolit4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nota_Edu_Fisi4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nota_Estad4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nota_Etica4" class="java.lang.String">
+		<fieldDescription><![CDATA[	]]></fieldDescription>
+	</field>
+	<field name="Nota_Fisica4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nota_Hum4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nota_Infor4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nota_Ingles4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nota_Mate4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nota_Natu4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nota_Filo4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nota_Quim4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nota_Reli4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nota_Soci4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Desemp_Arti4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Desemp_Catpaz4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Desemp_Cpolit4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Desemp_Edu_Fisi4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Desemp_Estad4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Desemp_Etica4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Desemp_Filo4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Desemp_Fisica4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Desemp_Hum4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Desemp_Infor4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Desemp_ingles4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Desemp_Mate4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Desemp_Natu4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Desemp_Quim4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Desemp_Reli4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Desemp_Soci4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Arti4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Catpaz4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Cpolit4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Edu_Fisi4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Estad4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Etica4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Filo4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Fisica4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Hum4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Infor4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Ingles4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Mate4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Natu4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Quim4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Reli4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Soci4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_Arti4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_CatPaz4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_Cpolit4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_Edu_Fisi4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_Estad4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_Etica4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_Filo4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_Fisica4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_Hum4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_Infor4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_Ingles4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_Mate4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_Natu4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_Quim4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_Reli4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Inasi_Soci4" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Estado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Arti3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Catpaz3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Cpolit" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Edu_Fisi3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Estad3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Etica3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Filo3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Fisica3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Hum3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Infor3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Ingles3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Mate3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Natu3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Quim3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Reli3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Soci3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Arti2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Catpaz2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Cpolit2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Edu_Fisi2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Estad2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Etica2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Filo2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Fisica2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Hum2" class="java.lang.String">
+		<fieldDescription><![CDATA[		]]></fieldDescription>
+	</field>
+	<field name="Acum_Infor2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Ingles2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Mate2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Natu2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Quim2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Reli2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Soci2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Arti" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Catpaz" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Edu_Fisi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Estad" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Etica" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Filo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Fisica" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Hum" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Infor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Ingles" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Mate" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Natu" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Quim" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Reli" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Acum_Soci" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="acumulado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="I_HUM" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="I_natu" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="I_soci" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="I_arti" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="I_edu_fisi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="I_reli" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="I_etica" class="java.lang.String">
+		<fieldDescription><![CDATA[	]]></fieldDescription>
+	</field>
+	<field name="I_ingles" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="I_mate" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="I_infor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="I_filo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="I_catpaz" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="I_estad" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="I_fisica" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="I_Quim" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="I_Cpolit" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="HUM" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="D_HUM" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="natu" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="D_natu" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="soci" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="D_soci" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="arti" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="D_arti" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="edu_fisi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="D_edu_fisi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="D_reli" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="reli" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="D_etica" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="etica" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="D_ingles" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ingles" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="D_mate" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mate" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="D_infor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="infor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="D_filo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="filo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="D_catpaz" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="catpaz" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="D_estad" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estad" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="D_fisica" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fisica" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="D_Quim" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Quim" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="D_Cpolit" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Cpolit" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="desempeno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="desemp_final" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="155">
+			<staticText>
+				<reportElement x="277" y="131" width="50" height="18" forecolor="#000000" uuid="891794ab-0888-4d5d-aa66-6de6318193ec"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Código:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="467" y="131" width="62" height="16" forecolor="#000000" uuid="d135eba8-c0eb-4d1d-9112-89e9429b9a67"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Promedio:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="645" y="131" width="91" height="17" uuid="a2bd88c4-2105-4ed4-9239-13249ce1df3c"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{desemp_final}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="319" y="87" width="138" height="18" forecolor="#000000" uuid="d2a17d9b-2671-4956-86a9-4722431f9152"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[DANE 313244000710]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="322" y="131" width="52" height="17" uuid="f38f7b36-c91a-4d31-9390-81b3e57d9631"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Cod_Estudiante4}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="437" y="109" width="109" height="17" uuid="628feffa-fa5e-4676-ac82-0ae938a22194"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Apellido_materno4}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="574" y="132" width="72" height="16" forecolor="#000000" uuid="215174f9-f4e5-49df-bad6-2ab04613070b"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Desempeño:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="168" y="108" width="153" height="18" forecolor="#000000" uuid="28737fc4-289c-4402-97ff-3f90387c747b"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[APELLIDOS Y NOMBRES:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="373" y="131" width="75" height="18" forecolor="#000000" uuid="eec63caf-dcd9-41e8-b3de-5a1e9020c63e"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Año:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="529" y="131" width="56" height="17" uuid="17fbf240-079c-4a8e-9871-1d8838e32f40"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{desempeno}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="251" y="68" width="288" height="19" forecolor="#000000" uuid="7695fbb4-5e29-4e94-9e80-6fde6d175514"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Aprobación Oficial Res 00178 Nov-05-1999]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="547" y="110" width="189" height="17" uuid="83c0c8cc-462d-4dc7-9df1-f4ac1f73c071"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nombre4}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="186" y="42" width="357" height="29" forecolor="#000000" uuid="da7bd848-4fa9-48fd-aa8c-2ee69a22549b"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Serif" size="24" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Colegio San Rafael]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="171" y="132" width="40" height="18" forecolor="#000000" uuid="7fa5372e-beca-4d82-a6ee-56b917feeb04"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Grado:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="211" y="132" width="68" height="17" uuid="1cdbea0c-1ad6-4b55-bc21-9f2f238f391d"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Grado4}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="461" y="87" width="77" height="18" forecolor="#000000" uuid="8f12c9c0-305f-4b2a-a809-a2c85d01f5e2"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[ICFES 180893]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="402" y="131" width="68" height="17" uuid="b6d0e064-7957-4cbb-b115-2e9437f02faf"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Ano4}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="321" y="108" width="113" height="18" uuid="0d8dcb18-f74a-4ab7-8c2e-c05283ef326e"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Apellido_paterno4}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="339" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="152" y="41" width="94" height="24" uuid="22ac1b01-9268-456c-9e75-d9b182c13f36"/>
+			</frame>
+			<staticText>
+				<reportElement x="157" y="52" width="175" height="18" forecolor="#000000" uuid="9d5b01ad-34ad-44df-92bd-41e8376ce6be"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[BIOLOGÍA INTEGRADA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="157" y="71" width="175" height="18" forecolor="#000000" uuid="7ecf41cc-e89c-4409-90cd-e5e895dea1f2"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[CIENCIAS SOCIALES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="157" y="108" width="175" height="18" forecolor="#000000" uuid="e0fc6df7-b6b4-4630-a7de-95e6f5f66d44"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[EDUCACIÓN FÍSICA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="156" y="89" width="175" height="18" forecolor="#000000" uuid="3cd2440e-3436-44d8-b67e-4f888fd37244"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[EDUCACIÓN ARTÍSTICA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="158" y="145" width="175" height="18" forecolor="#000000" uuid="6a9efc96-e9bf-4b8a-8b0c-dd48f8b7072b"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[ÉTICA Y VALORES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="158" y="127" width="175" height="18" forecolor="#000000" uuid="68ca69b9-af35-4433-b677-890c531c7f39"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[EDUCACIÓN  RELIGIOSA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="158" y="183" width="175" height="18" forecolor="#000000" uuid="913ecbe1-8c02-4c83-b5a7-0811fc5d36c1"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[INGLES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="158" y="164" width="191" height="18" forecolor="#000000" uuid="b54b6ba4-d8b0-4a60-9312-4bacdcbc4d82"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[HUMANIDADES-CASTELLANO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="156" y="219" width="192" height="18" forecolor="#000000" uuid="a7983a24-7fb5-4877-bd9c-f7cd61edd8ad"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[TECNOLOGÍA E INFORMÁTICA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="158" y="202" width="175" height="18" forecolor="#000000" uuid="c8289e9e-07e7-4dac-accb-68f889f0301a"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[MATEMÁTICAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="158" y="238" width="175" height="18" forecolor="#000000" uuid="6564e317-613c-4d7d-9ce8-86ce428564b4"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[FILOSOFÍA]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="355" y="52" width="22" height="17" uuid="e784bad1-093e-4063-8072-490f95b8bbe5"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[3]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="150" y="69" width="586" height="2" uuid="8446d14e-0d7e-464a-8249-7076b18ce03f"/>
+			</line>
+			<line>
+				<reportElement x="150" y="88" width="586" height="2" uuid="fa9c78d2-8bc4-46ac-9052-f00603b18d69"/>
+			</line>
+			<line>
+				<reportElement x="150" y="107" width="586" height="2" uuid="1f664898-bc4c-4aea-8fdd-5370da2aa79e"/>
+			</line>
+			<line>
+				<reportElement x="150" y="124" width="586" height="2" uuid="55f542ae-aa84-4e99-ba77-2f36536494ae"/>
+			</line>
+			<line>
+				<reportElement x="150" y="143" width="586" height="2" uuid="48a6e421-03e9-441b-a816-6f3ab08e9b5a"/>
+			</line>
+			<line>
+				<reportElement x="150" y="162" width="586" height="2" uuid="7ab72797-a307-4810-a4fa-b72b0ee772c3"/>
+			</line>
+			<line>
+				<reportElement x="150" y="181" width="586" height="2" uuid="cecbdd34-cc0c-4454-814f-9692e4ba3248"/>
+			</line>
+			<line>
+				<reportElement x="150" y="200" width="586" height="2" uuid="800db5b5-4ffd-4fc0-a665-1cf840dcd150"/>
+			</line>
+			<line>
+				<reportElement x="150" y="218" width="586" height="2" uuid="c8364439-9e04-4013-b241-230d47079aba"/>
+			</line>
+			<line>
+				<reportElement x="150" y="236" width="586" height="2" uuid="5e2a1c67-2e68-439e-a4ee-57452a8f2518"/>
+			</line>
+			<line>
+				<reportElement x="152" y="255" width="586" height="2" uuid="a811a70d-1dd4-4873-b0a7-334e3a8771cf"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="355" y="73" width="22" height="17" uuid="a91d6a1e-5cb3-4e8d-a99a-7f9c5d0f4e54"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[3]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="355" y="92" width="22" height="17" uuid="4b91f947-576e-4738-a91a-b4acaea2d004"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[2]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="355" y="110" width="22" height="17" uuid="f5994de4-2c80-4830-9467-60528d79706a"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[3]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="355" y="128" width="22" height="17" uuid="4cca0709-5a34-4703-9583-d72e28afb7b6"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[2]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="355" y="144" width="22" height="17" uuid="17b0fe08-d19a-42f9-a26a-f87dff2093ef"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[2]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="355" y="163" width="22" height="17" uuid="a466c752-a6a7-44da-8ff6-383f9bd1c497"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[4]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="355" y="182" width="22" height="17" uuid="5f461025-87a1-4f65-9a88-dedd4cb5f035"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[3]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="355" y="203" width="22" height="17" uuid="3d9ab84a-cf43-4c23-8b35-6b0d1e5b36de"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[4]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="355" y="219" width="22" height="17" uuid="bb5ce625-3e2f-4782-9f1f-39112c8ab6c7"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[2]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="355" y="240" width="22" height="17" uuid="ea93bd45-6ec5-43c3-b056-69ee40aee39e"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[1]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="391" y="219" width="30" height="17" uuid="04305177-c159-4c4f-8dab-fc7d5fca0811"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Infor}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="391" y="128" width="30" height="17" uuid="8e62d79f-41cd-4835-b0d2-ca4c4c330838"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Reli}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="391" y="240" width="30" height="17" uuid="d799238f-5a8a-4933-b323-853d1c4f0fa4"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Filo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="391" y="144" width="30" height="17" uuid="fd0393c6-d866-4bd7-b342-5fe212c07d7d"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Etica}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="391" y="182" width="30" height="17" uuid="3808048f-031f-4df6-9609-794ef03ffb6f"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Ingles}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="391" y="92" width="30" height="17" uuid="1a4fa7bc-71f7-4055-a3e4-381c0736ddb0"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Arti}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="391" y="163" width="30" height="17" uuid="54e13369-8395-4df0-9baf-15a01b5a2dcb"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Hum}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="391" y="52" width="30" height="17" uuid="39ff9980-e26c-46d5-9497-3bdf44df6bc6"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Natu}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="391" y="110" width="30" height="17" uuid="a980f9ad-b5cd-4d7c-8269-0cd93d47e0d2"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Edu_Fisi}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="391" y="73" width="30" height="17" uuid="6f0728c8-9603-43e7-a15b-62cdb2ec88ab"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Soci}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="391" y="203" width="30" height="17" uuid="f2a74647-96aa-46b2-bdf9-c25893ae7fed"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Mate}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0">
+				<reportElement positionType="Float" x="553" y="202" width="35" height="17" uuid="e7b10302-8a9d-4dc0-992e-689da04c94a9"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{I_mate}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0">
+				<reportElement positionType="Float" x="553" y="71" width="35" height="17" uuid="30d86a43-5066-4c12-9982-d9ae558918bc"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{I_soci}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0">
+				<reportElement positionType="Float" x="553" y="145" width="35" height="17" uuid="4c702a35-9b87-4768-a541-e295138b55a1"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{I_etica}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0">
+				<reportElement positionType="Float" x="553" y="184" width="35" height="17" uuid="7776cef8-5e12-446a-be1a-ee38f2a50a5f"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{I_ingles}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0">
+				<reportElement positionType="Float" x="553" y="164" width="35" height="17" uuid="5667d626-941b-49fe-aca9-6ac6fb0f7085"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{I_HUM}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0">
+				<reportElement positionType="Float" x="553" y="239" width="35" height="17" uuid="5565c194-85a0-4aa1-a820-db58bea0c6aa"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{I_filo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0">
+				<reportElement positionType="Float" x="553" y="90" width="35" height="17" uuid="2c61b9d0-8da0-477e-a751-fc5892007347"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{I_arti}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0">
+				<reportElement positionType="Float" x="552" y="50" width="35" height="17" uuid="eb82ecfd-f3ae-4de3-b25b-1a1661d9959f"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{I_Cpolit}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0">
+				<reportElement positionType="Float" x="553" y="126" width="35" height="17" uuid="46d82749-5504-41e5-8122-974609420e2f"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{I_reli}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0">
+				<reportElement positionType="Float" x="553" y="220" width="35" height="17" uuid="86dac90c-5018-481f-95e3-36f2aa0befa9"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{I_infor}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0">
+				<reportElement positionType="Float" x="553" y="108" width="35" height="17" uuid="ad2aae55-098b-4401-a935-22bdcaac979b"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{I_edu_fisi}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="608" y="52" width="43" height="17" uuid="d05d8e08-3376-4227-8407-4973f3b9af2e"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{natu}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="608" y="73" width="43" height="17" uuid="e3ef6be8-a7f6-46c4-ba3a-18bfdc4703b9"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{soci}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="608" y="110" width="43" height="17" uuid="64cd331f-eddb-4ec7-b0cd-a86c7a64398f"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{edu_fisi}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="608" y="144" width="43" height="17" uuid="682cb139-b124-4735-a650-304acdc0f99c"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{etica}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="608" y="237" width="43" height="17" uuid="1ee15738-2f6b-469d-a205-61879eb73288"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{filo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="608" y="163" width="43" height="17" uuid="bbb082ae-ab07-4fa1-99ba-7795084ed00f"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{HUM}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="608" y="182" width="43" height="17" uuid="97f41fbb-f1e2-41be-9bb6-b222d2492fc3"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ingles}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="608" y="203" width="43" height="17" uuid="1f275755-c20d-43c6-aa91-2881eaae8363"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mate}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="608" y="92" width="43" height="17" uuid="c1208418-ee4f-4b3b-a425-6a4b2217d64f"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{arti}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="608" y="219" width="43" height="17" uuid="94ec83f7-115e-4ca0-acc2-fdb9e5e079d0"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{infor}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="608" y="128" width="43" height="17" uuid="9a0c4ebf-caed-4455-806b-e544105f92f7"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{reli}]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement mode="Opaque" x="144" y="8" width="593" height="34" forecolor="#FFFFFF" backcolor="#C0C0C0" uuid="2df7ecb0-e7d0-45b7-be76-1ef3dcf2c6db"/>
+				<staticText>
+					<reportElement x="283" y="15" width="33" height="14" forecolor="#000000" uuid="05d18e83-1099-464f-ad6f-202ae8a31d2a"/>
+					<textElement>
+						<font fontName="DejaVu Sans" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[(30%)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="352" y="14" width="33" height="13" forecolor="#000000" uuid="c5bd5a98-d36c-41e9-b67b-f5f4ecd35145"/>
+					<textElement>
+						<font fontName="DejaVu Sans" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[(25%)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="23" y="0" width="389" height="14" forecolor="#000000" uuid="d9bbaaca-3e98-4f2a-8a55-38af50f64fe9"/>
+					<textElement>
+						<font fontName="DejaVu Sans" size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[ÁREAS/ASIGNATURAS                  I.H.S      P. 1°    P. 2°  P. 3°  P. 4°    ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="399" y="2" width="53" height="18" forecolor="#000000" uuid="6cf62e93-b74c-4515-9a9b-dc82c3f09d9c"/>
+					<textElement>
+						<font fontName="DejaVu Sans" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[TOTAL INASI]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="452" y="2" width="72" height="18" forecolor="#000000" uuid="2e4cc72b-badb-4821-a4ae-8a27180131ae"/>
+					<textElement>
+						<font fontName="DejaVu Sans" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[ACUM. FINAL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="465" y="14" width="61" height="18" forecolor="#000000" uuid="d36e1495-07ab-453f-8905-c2ced554f703"/>
+					<textElement>
+						<font fontName="DejaVu Sans" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[(100%)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="243" y="16" width="33" height="18" forecolor="#000000" uuid="cd4bdfe8-8c3d-4d47-91e5-df73bb781938"/>
+					<textElement>
+						<font fontName="DejaVu Sans" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[(20%)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="317" y="14" width="33" height="18" forecolor="#000000" uuid="5dd824f4-7bda-4caf-9796-ba6b3555c013"/>
+					<textElement>
+						<font fontName="DejaVu Sans" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[(25%)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="524" y="1" width="68" height="18" forecolor="#000000" uuid="ec3d6502-744d-479b-8ff3-b90d798215d0"/>
+					<textElement>
+						<font fontName="DejaVu Sans" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[DESEMPEÑO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="388" y="14" width="76" height="18" forecolor="#000000" uuid="a1cd1501-a4e4-44d0-8944-ef164f8ff618"/>
+					<textElement>
+						<font fontName="DejaVu Sans" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[INASISTENCIA]]></text>
+				</staticText>
+			</frame>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="668" y="128" width="62" height="17" uuid="10cb5009-0cc3-45cd-9822-5fd332736f0d"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{D_reli}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="668" y="242" width="62" height="17" uuid="2e2d6902-5dc4-42eb-b88e-03b7439186f2"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{D_filo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="668" y="202" width="62" height="17" uuid="cca7f75b-3f94-4c68-8cfa-f6ae299b27bf"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{D_mate}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="668" y="183" width="62" height="17" uuid="969f255e-9bdb-4eb1-8935-33d00518d4d0"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{D_ingles}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="668" y="92" width="62" height="17" uuid="b39da66e-275b-470f-a178-a03f5e549e09"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{D_arti}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="668" y="146" width="62" height="17" uuid="418ac2d5-cfe3-43bc-b8ca-394423020ff5"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{D_etica}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="668" y="220" width="62" height="17" uuid="e0d11a70-925a-4f34-b16e-66474dcf4951"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{D_infor}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="668" y="110" width="62" height="17" uuid="53e3e178-1657-4cfc-97a0-f935fd36a9c9"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{D_edu_fisi}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="668" y="73" width="62" height="17" uuid="4661a95e-1b7a-456a-a641-3faaf436a30c"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{D_soci}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="668" y="52" width="62" height="17" uuid="d2e2b404-d1bc-4d17-a667-023486802008"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{D_natu}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="668" y="164" width="62" height="17" uuid="c28cba76-cce1-4dbd-9923-3001af1e0c03"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{D_HUM}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="355" y="258" width="22" height="17" uuid="1036f243-1ffb-4b00-ab27-cc5c27f8ae17"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[1]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="158" y="256" width="175" height="18" forecolor="#000000" uuid="d7b68691-5095-4bd7-833a-0ec742d59418"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[CÁTEDRA DE LA PAZ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="391" y="258" width="30" height="17" uuid="d147240e-aa9f-4c33-ade2-a017625c5fab"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Catpaz}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="668" y="259" width="62" height="17" uuid="f897d889-e932-4690-af97-cb2b17140526"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{D_catpaz}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="152" y="273" width="586" height="2" uuid="613d5576-2338-4c93-8889-2330a496c6d9"/>
+			</line>
+			<textField isStretchWithOverflow="true" pattern="###0">
+				<reportElement positionType="Float" x="553" y="256" width="35" height="17" uuid="e413242d-a643-425c-abee-1ec46d3465df"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{I_catpaz}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="608" y="255" width="43" height="17" uuid="a56a9abb-f2c8-4568-a272-612077598e9b"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{catpaz}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="355" y="278" width="22" height="17" uuid="2790d9dd-c892-4ca2-865c-a14f4481ad97"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[1]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="158" y="276" width="175" height="18" forecolor="#000000" uuid="43c6e6fc-28a5-41e0-8fe9-d4aca6f695d4"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[ESTADÍSTICA]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="391" y="278" width="30" height="17" uuid="0d3ac235-aeb6-4f9c-889a-c4e1e656c3b2"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Estad}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="668" y="279" width="62" height="17" uuid="846b1b27-03f3-4b5d-a9b3-9f72055766d6"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{D_estad}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="152" y="293" width="586" height="2" uuid="995cf516-dc78-4f85-b4dc-134838a6de62"/>
+			</line>
+			<textField isStretchWithOverflow="true" pattern="###0">
+				<reportElement positionType="Float" x="553" y="276" width="35" height="17" uuid="52d1ed95-171b-4b19-a0b0-623c18631e17"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{I_estad}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="608" y="275" width="43" height="17" uuid="869b95c6-67d2-4bbb-b1aa-c1d04a0d4711"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estad}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="355" y="297" width="22" height="17" uuid="855f6448-438b-45b5-ba9e-5b5da13da347"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[1]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="158" y="296" width="175" height="18" forecolor="#000000" uuid="5d0baca0-e899-4732-8434-b1e444b9b8d5"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[FÍSICA]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="391" y="297" width="30" height="17" uuid="c3676739-5215-40a7-a701-660435071803"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Fisica}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="668" y="298" width="62" height="17" uuid="1e3a9db5-4a5d-4752-ab9c-66559fab6fac"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{D_fisica}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="152" y="312" width="586" height="2" uuid="c55ab5aa-6931-4613-9d85-6833f8b8e3eb"/>
+			</line>
+			<textField isStretchWithOverflow="true" pattern="###0">
+				<reportElement positionType="Float" x="553" y="295" width="35" height="17" uuid="7ba32600-d5b8-47e3-908a-1a1fda60c5e1"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{I_fisica}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="608" y="294" width="43" height="17" uuid="9259ebb7-6fe2-44d7-a9a6-e29c2e851f82"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fisica}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="668" y="317" width="62" height="17" uuid="4883d01d-d6fa-439b-a170-6e5e331d1791"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{D_Quim}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="391" y="317" width="30" height="17" uuid="8b51354b-5a7f-47dd-b2fd-54bbb5c80a41"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Quim}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="608" y="315" width="43" height="17" uuid="81fd2592-2957-4af1-b385-0afcd2a8289d"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Quim}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="152" y="333" width="586" height="2" uuid="85a36cf0-64f4-491d-a13b-26aa58c8160b"/>
+			</line>
+			<staticText>
+				<reportElement x="158" y="316" width="175" height="18" forecolor="#000000" uuid="8ab84538-df01-4f18-b90b-30e792594ab2"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[QUÍMICA]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="355" y="318" width="22" height="17" uuid="6534a5b5-3a3e-4f49-8614-fe495b26bdf4"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[1]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0">
+				<reportElement positionType="Float" x="553" y="316" width="35" height="17" uuid="878b481b-d08b-4278-8221-4795d3120deb"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{I_Quim}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="430" y="317" width="30" height="17" uuid="70d9486b-2dbc-4f39-9f81-c48caded9aed"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Quim2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="430" y="52" width="30" height="17" uuid="04f4860c-adaf-4e1b-98e6-6288debd1f62"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Natu2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="430" y="92" width="30" height="17" uuid="de514b09-a288-4de2-9e54-d8a223471f03"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Arti2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="430" y="219" width="30" height="17" uuid="edc4bc2b-e4be-44f6-a411-a4ea44a4eaf3"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Infor2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="430" y="163" width="30" height="17" uuid="0733b1b0-3042-4401-b0e3-90a0b546aff7"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Hum2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="430" y="182" width="30" height="17" uuid="bf6d1a61-052f-448f-a3b4-dcab1b5e5f0c"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Ingles2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="430" y="144" width="30" height="17" uuid="0f0a7710-b806-4ec6-8c6a-d08b4a12b259"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Etica2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="430" y="73" width="30" height="17" uuid="f0a009a0-85ae-4af1-8837-4ae51d64f7a9"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Soci2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="430" y="278" width="30" height="17" uuid="4e12ea72-8f5b-4867-9d34-8e05cb1af23d"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Estad2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="430" y="258" width="30" height="17" uuid="b19bf72f-5091-4c67-9e3c-5da517e4be7a"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Catpaz2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="430" y="128" width="30" height="17" uuid="114a9b20-88ce-40be-a1b5-5b1ede316187"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Reli2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="430" y="240" width="30" height="17" uuid="774ec9ae-a79e-4b4f-89fc-95eda1e6e6f0"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Filo2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="430" y="297" width="30" height="17" uuid="17d92814-bc76-453e-8ef9-6bc35cf27138"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Fisica2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="430" y="203" width="30" height="17" uuid="eea01ec9-eea6-4fe9-beee-1ca0da46b9cb"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Mate2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="430" y="110" width="30" height="17" uuid="70aaaded-256f-4f81-91f5-781d1a9badfc"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Edu_Fisi2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="463" y="241" width="30" height="17" uuid="4530c9cd-ecec-48a2-980e-bc431eb1c21f"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Filo3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="463" y="74" width="30" height="17" uuid="8b5dc869-e528-4b57-aa1b-a844824af52d"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Soci3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="463" y="279" width="30" height="17" uuid="95fb8b39-8cde-4661-a552-bfa041fbefea"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Estad3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="463" y="204" width="30" height="17" uuid="4d588cbf-29d4-4c8d-a672-5e7aae56615f"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Mate3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="463" y="183" width="30" height="17" uuid="a359dcd2-c3bc-45ed-97a0-3cd070c4debf"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Ingles3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="463" y="93" width="30" height="17" uuid="0360b43c-846a-49af-ac33-5482948b64b6"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Arti3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="463" y="129" width="30" height="17" uuid="23ed5069-6334-44a3-ac63-5a0cea84b2a0"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Reli3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="463" y="220" width="30" height="17" uuid="8f0cc7d3-d545-4640-8f4b-34cd523a006b"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Infor3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="463" y="52" width="30" height="17" uuid="0a56fdba-095f-46ac-8cca-dfd92731e3e6"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Natu3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="463" y="298" width="30" height="17" uuid="8f3c2ab8-7c25-4a4b-8cda-c9f82331ae9c"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Fisica3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="463" y="111" width="30" height="17" uuid="4c22d171-96f8-4153-ada1-6351fc7dff18"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Edu_Fisi3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="463" y="164" width="30" height="17" uuid="02e2a256-1f2e-437c-aa05-058671c380fb"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Hum3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="463" y="145" width="30" height="17" uuid="6a6298a8-3210-4f29-96b3-deceb916fd51"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Etica3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="463" y="259" width="30" height="17" uuid="ad818701-b5de-4323-a582-12e61ebafe61"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Catpaz3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="463" y="318" width="30" height="17" uuid="4d3f8831-c7f4-44ee-84d9-ee2701e216ac"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Quim3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="502" y="243" width="30" height="17" uuid="560470d9-bd30-4aad-9a21-ba91db7cedd8"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Filo4}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="502" y="75" width="30" height="17" uuid="ccff676f-5f39-415e-a519-2998d3ee59d9"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Soci4}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="502" y="280" width="30" height="17" uuid="616aad5f-88b9-4301-a4bd-3f6abd4499bf"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Estad4}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="502" y="205" width="30" height="17" uuid="18888179-775a-4d8f-bc94-981dd0f19ee8"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Mate4}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="502" y="184" width="30" height="17" uuid="88c70677-7ccb-4f68-84bf-8021bd7aebae"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Ingles4}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="502" y="94" width="30" height="17" uuid="f4de1729-4793-48d3-b876-075939bd2d7e"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Arti4}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="502" y="130" width="30" height="17" uuid="a7d40ff5-981d-4568-b1ef-eee8b1ae7c14"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Reli4}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="502" y="221" width="30" height="17" uuid="626f537d-0588-4f0b-b10d-fda7357ec560"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Infor4}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="502" y="52" width="30" height="17" uuid="d52c2371-c427-487e-911c-34f2b2ee74d7"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Natu4}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="502" y="299" width="30" height="17" uuid="e1774aab-b255-44a0-b8f7-be638f130b76"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Fisica4}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="502" y="112" width="30" height="17" uuid="e293c763-52e2-41cd-8255-865554b229ac"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Edu_Fisi4}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="502" y="165" width="30" height="17" uuid="05c6a243-d20c-4f7e-8724-00902e68db15"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Hum4}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="502" y="146" width="30" height="17" uuid="e9a4a6f4-6c81-4cf7-a8ce-172b6de8b8c6"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Etica4}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="502" y="260" width="30" height="17" uuid="24a72d77-f010-40fa-be1a-3cd9b62eb56b"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Catpaz4}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="502" y="319" width="30" height="17" uuid="3de6772d-4041-447e-b684-24c8262d47af"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Acum_Quim4}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="78" splitType="Stretch">
+			<line>
+				<reportElement x="247" y="17" width="489" height="1" uuid="ae694285-a595-4583-9761-04382e32eb4b"/>
+			</line>
+			<line>
+				<reportElement x="247" y="33" width="489" height="1" uuid="73dc0421-9f79-4ed9-99a1-7b6e51b16f88"/>
+			</line>
+			<staticText>
+				<reportElement x="155" y="0" width="109" height="18" forecolor="#000000" uuid="2e9f5bef-32fc-4d95-91cf-873c9675bb83"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[OBSERVACIONES:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="187" y="47" width="91" height="18" forecolor="#000000" uuid="023d52af-6868-4cce-bc10-c3ea421384dd"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RECTOR:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="247" y="58" width="261" height="1" uuid="9906711b-505e-4b00-8c6b-3b39d20d7d98"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="264" y="6" width="422" height="28" uuid="57bda7fb-4207-4d58-921c-aef3c3eadccd"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Estado}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
